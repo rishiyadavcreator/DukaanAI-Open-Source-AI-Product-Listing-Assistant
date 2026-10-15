@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DukaanAI - Product Listing Assistant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">✦ Dukaan<span>AI</span></a>
+    <div class="local-pill"><i></i> Local AI mode</div>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">MADE FOR SMALL BUSINESS</div>
+      <h1>Good products deserve<br><span>good words.</span></h1>
+      <p>Create product titles, descriptions, and social captions using an open-weight AI model running on your computer.</p>
+    </section>
+
+    <section class="workspace">
+      <form id="listingForm" class="panel">
+        <div class="panel-heading">
+          <h2>01 — Product details</h2>
+          <p>Tell us what you're selling.</p>
+        </div>
+
+        <label for="productName">Product name *</label>
+        <input id="productName" name="productName"
+          placeholder="e.g. Handmade soy candle" required>
+
+        <div class="two-col">
+          <div>
+            <label for="category">Category</label>
+            <select id="category" name="category">
+              <option>Home & living</option>
+              <option>Clothing & accessories</option>
+              <option>Food & drink</option>
+              <option>Beauty & wellness</option>
+              <option>Art & handmade</option>
+              <option>Electronics</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="price">Price (optional)</label>
+            <input id="price" name="price" placeholder="₹499">
+          </div>
+        </div>
+
+        <label for="features">Product features *</label>
+        <textarea id="features" name="features"
+          placeholder="Materials, benefits, size, and what makes it special..."
+          required></textarea>
+
+        <div class="two-col">
+          <div>
+            <label for="tone">Writing style</label>
+            <select id="tone" name="tone">
+              <option>Friendly and warm</option>
+              <option>Premium and elegant</option>
+              <option>Fun and playful</option>
+              <option>Simple and informative</option>
+            </select>
+          </div>
+          <div>
+            <label for="language">Language</label>
+            <select id="language" name="language">
+              <option>English</option>
+              <option>Hindi</option>
+              <option>Hinglish</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="primary-btn" id="generateBtn" type="submit">
+          ✦ Generate my listing →
+        </button>
+        <p class="fine-print">
+          AI runs locally through Ollama when configured.
+        </p>
+        <p id="status" class="status" role="status"></p>
+      </form>
+
+      <section class="panel results-panel">
+        <div class="panel-heading result-heading">
+          <h2>02 — Your content</h2>
+          <span id="readyBadge" class="ready-badge">WAITING</span>
+        </div>
+
+        <article class="output-card">
+          <div class="output-title">
+            <h3>Product title</h3>
+            <button class="copy-btn" data-copy="title" type="button">Copy</button>
+          </div>
+          <p id="outTitle" class="output-text placeholder">
+            Your product title will appear here.
+          </p>
+        </article>
+
+        <article class="output-card">
+          <div class="output-title">
+            <h3>Product description</h3>
+            <button class="copy-btn" data-copy="description" type="button">Copy</button>
+          </div>
+          <p id="outDescription" class="output-text placeholder">
+            Your product description will appear here.
+          </p>
+        </article>
+
+        <article class="output-card">
+          <div class="output-title">
+            <h3>Social caption</h3>
+            <button class="copy-btn" data-copy="caption" type="button">Copy</button>
+          </div>
+          <p id="outCaption" class="output-text placeholder">
+            Your social caption will appear here.
+          </p>
+        </article>
+
+        <div class="result-actions">
+          <button class="secondary-btn" id="downloadBtn" type="button">
+            ↓ Download .txt
+          </button>
+          <button class="secondary-btn" id="saveBtn" type="button">
+            + Save listing
+          </button>
+        </div>
+      </section>
+    </section>
+
+    <section class="benefits">
+      <article><h3>✦ Open-weight AI</h3><p>Use a model you can run yourself.</p></article>
+      <article><h3>▣ More control</h3><p>Local inference without a hosted AI API.</p></article>
+      <article><h3>ϟ Made for sellers</h3><p>Three useful marketing outputs in one place.</p></article>
+    </section>
+  </main>
+
+  <footer>DukaanAI · Write. Sell. Grow.</footer>
+  <script src="script.js"></script>
+</body>
+</html>
